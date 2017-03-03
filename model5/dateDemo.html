@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var d = new Date(); //创建当前日期;
+//    console.log(d);
+    document.write(d);
+    document.write("<hr>");
+    var dateTwo = new Date(2015,4,25);//创建日期对象
+    document.write(dateTwo);
+    document.write("<hr>");
+    var dateThree = new Date("2015-5-25"); //创建日期对象,注意加双引号
+    document.write(dateThree);
+    var dateFour = new Date();
+//    aler t(dateFour.getTime());//getTime 距离1970.01.01的毫秒数
+    var dateFour_1 = dateFour.setTime(7777711111);//
+    console.log("===="+dateFour);
+    console.log("==="+dateFour_1);
+//    alert(dateFour_1);
+    var d1 = new Date().setTime("222224444");
+    console.log(d1);
+    var d2 = new Date().getFullYear();//年份
+    console.log(d2);
+    var d3 = new Date().getMonth();//月份
+    console.log(d3);
+    var d4 = new Date().getDate(); //1-31号日期
+    var d5 = new Date().getDay(); //星期天数
+    console.log(d4);
+    console.log(d5);
+    var d6 = new Date().getHours();
+    var d7 = new Date().getMilliseconds();//获得当前时间的毫秒值
+    var d8 = new Date().getSeconds();
+    var d9 = new Date().getMinutes();//获得分钟数
+   console.log(d6);
+   console.log(d7);
+   console.log(d8);
+   console.log(d9);
+</script>
+</body>
+</html>

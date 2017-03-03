@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正则表达式的使用</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	//g:指定全局匹配
+	//i:不区分大小写的匹配
+	//m:多行匹配
+	var reg=new RegExp("study","ig");//这季节使用new
+	var reg1=/study/ig;//直接使用字符串,注意两个反斜杠
+	var str="good good study,day day up";
+	var str1="study";
+	var  newStr=reg.exec(str);//若能找到字符则返回该字符创,否则返回null
+	console.log(newStr);
+	console.log(reg.test(str));//test检索字符串中指定的值,返回false或者true
+	alert(reg.test(str)+"a");
+	var arr=str.match(reg);//使用 match 方法获取获取匹配数组,若没有找到则🔙null
+	console.log(arr);
+	var newL=str.search(reg);//返回出现的位置,注意下标从0开始,若没有找到,则返回-1
+	console.log("search:");
+	console.log(newL);
+	var reStr=str.replace(reg,"hard");//匹配并替换对应的字符串.不改变元老的字符串,若没有找到匹配项,则reStr与str一样
+	console.log("replace:");
+	console.log(reStr);
+	var spStr=str.split(reg);//债分字符串的数组
+	console.log("split:");
+	console.log(spStr);
+</script>
+</body>
+</html>

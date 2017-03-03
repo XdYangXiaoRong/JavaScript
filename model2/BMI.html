@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BIM指标计算</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="BIM.css">
+</head>
+<body>
+	 <div class="main">
+	 	<div class="left">
+	 	    <p>计算你的BMI值</p>
+	 		<input type="text" name="" id="show">
+	 		<span>
+	 		<label for="height">我的身高:</label>
+	 		<input type="text" name="" id="height">单位:厘米cm
+	 		</span>
+	 		<span>
+	 		<label for="weight">我的体重:</label>
+	 		<input type="text" name="" id="weight">单位:千克 kg
+	 		</span>
+	 		<input type="button" name="" value="计算BMI" onclick="calculate();">
+
+	 	</div>
+	 	<div class="right">
+	 		<p>BMI中国标准</p>
+	 		<table>
+
+	 			<tr class="zero">
+	 				<th>分类</th>
+	 				<th>BMI范围</th>
+	 			</tr>
+	 			<tr class="one">
+	 				<td>偏瘦</td>
+	 				<td><=18.4</td>
+	 			</tr>	
+	 			<tr class="two">
+	 				<td>正常</td>
+	 				<td>18.5~23.9</td>
+	 			</tr>	
+	 			<tr class="three">
+	 				<td>过重</td>
+	 				<td>24.0~27.9</td>
+	 			</tr>	
+	 			<tr class="four">
+	 				<td>肥胖</td>
+	 				<td>>=28.0</td>
+	 			</tr>	
+	 		</table>
+	 	</div>
+	 </div>
+	 <script type="text/javascript" src="BMI.js"></script>
+</body>
+</html>

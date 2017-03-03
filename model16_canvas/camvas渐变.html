@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas线性渐变,径向渐变</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<canvas id="mycanvas" width="600" height="400" style="border:1px solid gray">
+	你看不见我!
+</canvas>
+<script type="text/javascript">
+	var mycanvas=document.getElementById('mycanvas');
+	var ctx=mycanvas.getContext("2d");
+	/**********************线性渐变***************/
+	ctx.beginPath();
+	var color=ctx.createLinearGradient(20,20,120,0);//四个参数,(x1,y1,x2,y2)表示渐进开始的坐标和解说的坐标,由此得出渐进的方向
+	color.addColorStop(0,"red");
+	color.addColorStop(1,"white");
+	ctx.fillStyle=color;//应该先填色然后再画
+	ctx.fillRect(20,20,100,100);
+	ctx.closePath();
+
+	ctx.beginPath();
+	var color2=ctx.createLinearGradient(100,200,200,350);//-45度的方向
+	color2.addColorStop(0,"#37a");
+	color2.addColorStop(0.5,"lightblue");
+	color2.addColorStop(1,"blue");
+	ctx.fillStyle=color2;
+	ctx.fillRect(100,200,200,150);
+	ctx.closePath();
+
+	/*********径向渐变****************/
+	 ctx.beginPath();
+	 var color3=ctx.createRadialGradient(400,200,0,400,200,100);//6个参数,(xstart,ystart,radiusStart,xend,yend,radiusEnd);xstart:发散开始圆心的X坐标,yStart:发散开始圆心y坐标, radiusStart:发散开始圆的半径 xEnd:发散结束圆心的x坐标 yEnd:发散结束圆心的y坐标
+	 color3.addColorStop(0,"blue");
+	 color3.addColorStop(1,"lightblue");      
+	 ctx.arc(400,200,100,0,Math.PI*2,false); 
+	 ctx.fillStyle=color3;
+	 ctx.fill();
+	 ctx.closePath();                                       
+</script>
+</body>
+</html>

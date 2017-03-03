@@ -1,0 +1,58 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+form{
+	margin:50px auto;
+	width:1000px;
+	border:1px solid red;
+}
+div{
+	width:800px;
+	height:40px;
+	margin:10px auto;
+	border:1px green solid;
+}
+input[type="text"]{
+	width:230px;
+	height:25px;
+	margin-left: 10px;
+}
+input[type="button"]{
+	box-sizing: border-box;
+	width:70px;
+	height:25px;
+	line-height: 25px;
+	color:white;
+	background-color:red;
+	border:1px solid red;
+	border-radius:5px;
+	margin-left: 15px;
+}
+input[type="reset"]{
+	box-sizing: border-box;
+	width:70px;
+	height:25px;
+	line-height: 25px;
+	color:white;
+	background-color:green;
+	border:1px solid green;
+	border-radius:5px;
+	margin-left: 15px;
+}
+table{
+	margin:20px auto;
+}
+caption{
+	width:400px;
+	font-size:20px;
+	color:red;
+}
+td{
+	width:100px;
+	height:30px;
+	line-height: 30px;
+	border:1px solid lightgreen;
+	background-color:yellow;
+	color:lightgrey;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="mycanvas" width="800" height="600"></canvas>
+<script type="text/javascript">
+    var mycanvas = document.getElementById("mycanvas");
+    var ctx = mycanvas.getContext("2d");
+//    ctx.fillRect(0,0,100,50);
+
+    for(var i=0;i<5;i++){
+        ctx.fillRect(0,80*i,100,50);
+        ctx.fillText("我是靓女",150,30+50*i);
+
+    }
+
+
+</script>
+</body>
+</html>

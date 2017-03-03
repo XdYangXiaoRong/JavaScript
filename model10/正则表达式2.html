@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正则表达式</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	var reg=/\s/g;//匹配所有的不可见字符
+	var str="hello\n\r\t";
+	var newStr=str.match(reg);
+	console.log(newStr);
+	var reg2=/([0-9]?)/g;
+	var str2="test1d1";
+	// var newStr2=str2.match(reg2);
+	console.log(reg2.test(str2));
+</script>
+</body>
+</html>

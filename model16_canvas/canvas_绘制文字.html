@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas 绘制文字</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<canvas id="mycanvas" width="600px" height="300px" style="border:1px solid red">
+		如果你看到这句话说明你的浏览器不支持canvas属性
+	</canvas>
+	<canvas id="mycanvas2" width="408px" height="250px" style="border:1px solid green">
+		如果你看到这句话说明你的浏览器不支持canvas属性
+	</canvas>
+	<script type="text/javascript">
+		var mycanvas=document.getElementById("mycanvas");
+		var ctx=mycanvas.getContext("2d");
+		/*绘制文字基准线*/
+		ctx.moveTo(0,100);
+		ctx.lineTo(600,100);
+		ctx.moveTo(100,0);
+		ctx.lineTo(100,300);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.fillStyle="red";//或者ctx.strokeStyle="color";
+		ctx.textBaseline="ideographic";//alphabetic top hanging middle ideographic bottom
+		ctx.textAlign="start";//start end center left right
+		ctx.font="italic 50px 宋体";
+		ctx.fillText("Windows默认的屏保里有一个“贝塞尔曲线”的程序，大家现在可以打开来欣赏一下。一组不断扭伸的曲线令观看的人感叹它们的变幻莫测，其实个中道理相当简单，程序里只是一群分好了组的、按规律移动的点，机器根据点的移动、按照上面的公式实时地计算出当前的贝塞尔曲线，并在电脑屏幕上绘制出来，如此没完没了地进行着……",100,100);
+		ctx.closePath();
+
+		var mycanvas2=document.getElementById("mycanvas2");
+		var ctx2=mycanvas2.getContext("2d");
+		ctx2.beginPath();
+		ctx2.fillRect(0,0,408,250);
+		ctx2.closePath();
+
+		ctx2.beginPath();
+		ctx2.font="normal 40px bolder";
+		ctx2.fillStyle="white";
+		ctx2.fillText("GAME BEGIN",70,110);
+		ctx2.font="normal 20px bolder";
+		ctx2.fillStyle="red";
+		ctx2.fillText("CLICK IT TO START",105,160);
+		ctx2.beginPath();
+	</script>
+</body>
+</html>

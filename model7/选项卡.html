@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>选项卡</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+
+		}
+		.main{
+			width:500px;
+			height:700px;
+			background-color:lightgrey;
+			margin:0px auto;
+		}
+		.nav{
+			box-sizing: border-box;
+			width:100%;
+			height:50px;
+			line-height:50px; 
+			background-color:pink;
+			color:white;
+			margin-bottom: 20px;
+		}
+		.nav ul{
+			list-style: none;
+			display:flex;
+			justify-content: flex-start;
+			align-items: center;
+		}
+		.nav ul li{
+			height:50px;
+			box-sizing: border-box;
+			flex:1 0 auto;
+			border:5px solid grey;
+			text-align: center;
+		}
+		#two,#three{
+			display: none;
+		}
+		.content{
+			width:80%;
+			height:500px;
+			margin:0px auto;
+			background-color: white;
+		}
+		.content h1{
+			text-align:;
+		}
+		.content p{
+			text-indent:2em;
+			text-align:left;
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="nav">
+			<ul>
+				<li id="first" onclick="showFirst()">html</li>
+				<li id="second" onclick="showSecond()">css</li>
+				<li id="third" onclick="showThree()">javaScript</li>
+			</ul>
+		</div>
+		<div class="content" id="one">
+				<h1>HTML 简介</h1>
+				<p>超文本标记语言，标准通用标记语言下的一个应用。
+				“超文本”就是指页面内可以包含图片、链接，甚至音乐、程序等非文字元素。
+				超文本标记语言的结构包括“头”部分（英语：Head）、和“主体”部分（英语：Body），其中“头”部提供关于网页的信息，“主体”部分提供网页的具体内容。
+				</p>
+		</div>
+		<div class="content" id="two">
+			<h1>CSS 简介</h1>
+			<p>CSS即层叠样式表（Cascading StyleSheet）。 在网页制作时采用层叠样式表技术，可以有效地对页面的布局、字体、颜色、背景和其它效果实现更加精确的控制。 只要对相应的代码做一些简单的修改，就可以改变同一页面的不同部分，或者页数不同的网页的外观和格式。CSS3是CSS技术的升级版本，CSS3语言开发是朝着模块化发展的。以前的规范作为一个模块实在是太庞大而且比较复杂，所以，把它分解为一些小的模块，更多新的模块也被加入进来。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。</p>
+		</div>
+		<div class="content" id="three">
+			<h1>javaScript 简介</h1>
+			<p>在1995年前后，当时世界上的主流带宽为28.8Kbps，现在世界平均下载带宽为21.9Mbps（数据来源于http://www.netindex.com）。当时的网民，每提交一次表单，都需要等待很久才能收到服务器的回应，甚至很可能等了几分钟收到的却是说缺少了某一项。为了改善用户体验，嵌入浏览器客户端的能实现简单表单判断的脚本诞生了，这就是JavaScript。
+			JavaScript最早是工作于Netscape （网景公司）的 Brendan Eich为即将在1995年发行的NetscapeNavigator 2.0（NN2.0）开发的，当时叫做LiveScript。由于当时是和非常热门的Sun公司合作的，为了赶上当时的潮流——Java语言，这门语言被命名为JavaScript。
+			</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var first=document.getElementsByClassName("content")[0];
+	var second=document.getElementsByClassName("content")[1];
+	var third=document.getElementsByClassName("content")[2];
+	// var first=document.getElementById("one");
+	// var second=document.getElementById("two");
+	// var third=document.getElementById("three");
+	function showSecond(){
+		first.style.display="none";
+		second.style.display="block";
+		third.style.display="none";
+	}
+	function showThree(){
+		first.style.display="none";
+		second.style.display="none";
+		third.style.display="block";
+	}
+	function showFirst(){
+		first.style.display="block";
+		second.style.display="none";
+		third.style.display="none";
+	}
+</script>
+</html>

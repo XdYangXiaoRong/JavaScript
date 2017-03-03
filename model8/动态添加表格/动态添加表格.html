@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>动态添加表格</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		table{
+			width:500px;
+			margin:20px auto;
+		}
+		th{
+			width:100px;
+			height:30px;
+			line-height: 30px;
+			border:1px solid lightgreen;
+			background-color:yellow;
+			color:green;
+		}
+		td{
+			width:100px;
+			height:30px;
+			line-height: 30px;
+			border:1px solid lightgreen;
+			background-color:yellow;
+			color:lightgreen;
+			text-align:center;
+		}
+		input[type="button"],input[type="reset"]{
+			display: block;
+			width:100px;
+			height:30px;
+			line-height:30px;
+			margin:10px auto;
+			background-color: pink;
+			color:white;
+			border:1px solid pink;
+			border-radius:5px;
+			text-align: center;
+		}
+		.inputGroup{
+			width:580px;
+			height:80px;
+			margin:20px auto;
+			/*border:1px solid red;*/
+		}
+		.inputGroup input[type="text"]{
+			margin-left:8px;
+			margin-top:10px;
+		}
+	</style>
+</head>
+<body>
+<form>
+	<table >
+		<caption>青云学生名单</caption>
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>学号</th>
+				<th>年龄</th>
+				<th>星座</th>
+				<th>操作</th>	
+			</tr>
+		</thead>
+		<tbody id="tables"><tr  class="trgroup">
+				<td date="0">杨潇蓉</td>
+				<td date="1">2</td>	
+				<td date="2">22</td>
+				<td date="3">射手座</td>
+				<td date="4"><a href="#" onclick="removeTr()" class="cut">删除</a></td></tr></tbody>	
+	</table>
+	<div class="inputGroup">
+		
+			<input type="text" name="name" id="name" placeholder="请输入你要添加的姓名">
+			<input type="text" name="number" id="number" placeholder="请输入你要添加的学号">
+			<input type="text" name="age" id="age" placeholder="请输入你要添加的年龄">
+			<input type="text" name="star" id="star" placeholder="请输入你要添加的星座">
+			<input type="button" name="" id="addFor" value="给表格添加一行" onclick="add()">
+			<input type="reset" name="" value="重置" >
+			<input type="button" name="" value="移除一行" onclick="remove()">
+		
+	</div>
+</form>	
+<script type="text/javascript" src="childNode.js"></script>
+</body>
+</html>

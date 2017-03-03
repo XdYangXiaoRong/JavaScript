@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js类习惯转换</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		/**数据类型转换 强制类型转换 Boolean() Number() String()
+		转换函数 parseInt() parseFloat() 前提要求被转换类型为字符串形式*/
+		//Number 强制类型转换 可以实现所有的数据类型转换为数字类型
+		var a=null;//null转换为0
+		var a1=Number(a);
+		console.log(a1);
+		var b=undefined;//undefined 转换为NaN(not a number)
+		b1=Number(b);
+		console.log(b1);
+		var c=true;//Bollean类型为true时,转换为1 false 转换为0
+		var c1=Number(c);
+		console.log(c1);
+		var d="abc";//null转换为0
+		var d1=Number(d);
+		console.log(d1);
+		var e="567";//null转换为0
+		var e1=Number(e);
+		console.log(e1);
+		var f="123aa";//null转换为0
+		var f1=Number(f);
+		console.log(f1);
+		//parseInt() parseFloat() 前提要求被转换类型为字符串形式
+		//parseInt() 转换为整型数字
+		//parseFloat() 转换为浮点型数字
+		var g="666";
+		var g1=parseInt(g);
+		console.log(g1);
+		var h="123.43";
+		var h1=parseInt(h);
+		console.log(h1);
+		var i="123.45";
+		var i1=parseFloat(i);
+		console.log(i1);
+		var j="123.356768";
+		var j1=parseFloat(j).toFixed(1);
+		console.log(j1);
+		var k="sd456aa";
+		var k1=parseFloat(k);//当字符里面含为非数字文本时,会依次验证,直到遇到非数字字符为止,如果第一个字母就为非数字字母事,返回NaN
+		console.log(k1);
+
+		//Boolean()  当数值非空时 非0时 非null 非undefined时,均为true,否则为false
+		var l="我的";
+		// alert(typeof(l));
+		var l1=Boolean(l);
+		console.log(l1);
+		//String() 将其他数据类型转换为对应字符串
+		var m="jdeg";
+		var m1=String(m);
+		alert(typeof(m1));
+		console.log(m1);
+		
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

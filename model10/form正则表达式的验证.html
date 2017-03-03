@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form表单验证</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		label{
+			width:100px;
+			float:left;
+			margin:10px auto;
+		}
+		input{
+			width:230px;
+			margin-left: 20px;
+			display: block;
+			float:left;
+			margin:10px auto;
+		}
+		fieldset{
+			width:400px;
+			margin:0px auto;
+			box-sizing: border-box;
+			padding:20px;
+		}
+		input[type="submit"]{
+			width:60px;
+			height:30px;
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+<fieldset>
+	<legend>用户表单验证</legend>
+		<form name="order">
+			<label for="userName">用户名</label>
+			<input type="text" name="userName" id="userName" required>
+			<label for="password">密码</label>
+			<input type="password" name="password" id="password" >
+			<label for="password2">确认密码</label>
+			<input type="password" name="password2" id="password2">
+			<label for="email">您的邮箱</label>
+			<input pattern="^\w{1,}@\w{1,}\.\w{1,}$" name="email" id="email" title="请确认你输入的邮箱正确">
+			<label for="phone">您的电话号码</label>
+			<input pattern="[0-9]{11}" name="phone" id="phone" title="请确保您输入的电话号码是11位">
+			<input pattern="" name="">
+
+
+			<input type="submit" name="" value="保存" formnovalidate formaction="/save">
+			<input type="submit" name="" value="提交表单">
+
+		</form>
+</fieldset>
+<script type="text/javascript">
+	var myUserName=document.getElementById("userName");
+	var regAll=/^[a-zA-Z_]\w{5,11}$/;
+	 myUserName.onchange=function(){
+	 	if(regAll.test(myUserName.value)){
+	 		// alert("right");
+	 		doCustomValidity(myUserName,'');
+	 	}
+	 	else{
+	 		// alert("wrong");
+	 		doCustomValidity(myUserName,"请确保你输入的不是数字开头,且其余部分由数字,字母,'_'组成");
+	 	}
+	 }
+	 function doCustomValidity(field,msg){
+	 	if('setCustomValidity' in field){
+	 		field.setCustomValidity(msg);
+	 	}
+	 	else{
+	 		field.validationMessage=msg;
+	 	}
+	 }
+</script>
+</body>
+</html>

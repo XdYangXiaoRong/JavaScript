@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>画100个圆方法2</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.radius{
+			position: absolute;
+			border-radius: 50%;
+			border:1px solid red;
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+window.onload=function(){
+	var color=["lightblue","lightpink","yellow","lightgreen","lightgrey"];
+
+	for(var i=0;i<100;i++){
+		var colorIndex=parseInt(Math.random()*4);
+		// var newDiv=document.createElement("div");
+		// newDiv.setAttribute("class","radius");
+		var width=parseInt(Math.random()*100);
+		// var height=parseInt(Math.random()*50);
+		
+		var squareAll=new Square(width,width,color[colorIndex]);
+		squareAll.init();
+	}
+	
+}
+function DrawCss(object,json){
+	for(var i in json){//对象的枚举
+		if(i=="backgroundColor"){
+			object.style[i]=json[i];
+		}
+		else{
+			object.style[i]=json[i]+"px";
+		}
+	}	
+}
+function Square(width,height,backgroundColor){
+	this.width=width;
+	this.height=height;
+	this.backgroundColor=backgroundColor;
+}
+Square.prototype.init = function(){
+    var newDiv = document.createElement("div");
+    newDiv.className = "radius";
+    var top=parseInt(Math.random()*1000);
+	var left=parseInt(Math.random()*1000);
+   	DrawCss(newDiv,{"width":this.width,
+			"height":this.height,
+			"backgroundColor":this.backgroundColor,
+			"top":top,
+			"left":left
+		});
+   	document.body.appendChild(newDiv);
+}
+</script>
+</body>
+</html>

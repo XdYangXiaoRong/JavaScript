@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>会弹得球</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			overflow:scroll;
+			overflow-x:hidden;
+		}
+		#box{
+			width:800px;
+			height: 800px;
+			border:20px groove grey;
+			position: relative;
+			margin:0px auto;
+		}
+		#ball{
+			width:50px;
+			height:50px;
+			border-radius: 50%;
+			position: absolute;
+			top:0px;
+			left:0px;
+			background-color: red;
+		}
+		#board{
+			position: absolute;
+			top:600px;
+			left:350px;
+			width:100px;
+			height:20px;
+			background:linear-gradient(180deg,gray,lightgrey,black);
+			/*background-color :black;*/
+		}
+
+	</style>
+</head>
+<body>
+<div id="box">
+	<div id="ball"></div>
+	<div id="board"></div>
+</div>
+<script type="text/javascript">
+	var box=document.getElementById("box");
+	var ball=document.getElementById("ball");
+	var boxWidth=box.clientWidth;//盒子的内的宽度
+	var boxHeight=box.clientHeight;//盒子的内的高度
+	var ballWidth=ball.clientWidth;//球的宽度
+	var ballHeight=ball.clientHeight;//球的高度
+	var myboard;//移动的板子的名字
+	var disX=Math.ceil(Math.random()*30);
+	var disY=Math.ceil(Math.random()*30);
+	var res1=0;
+	var res2=0;
+	var timer;
+	var timer1;
+	ballMove(ballHeight);
+	function ballMove(ballh){
+		
+		 timer=setInterval(function(){
+			// alert(123);
+			if(ball.offsetLeft>=boxWidth-ballWidth){
+				disX=-disX;
+			}
+			else if(ball.offsetLeft<0){
+				disX=-disX;
+			}
+
+			if(ball.offsetTop>=boxHeight-ballh){
+				disY=-disY;
+				
+			}
+			else if(ball.offsetTop<0){
+				disY=-disY;
+			}
+			res1+=disX;
+			res2+=disY;
+			ball.style["left"]=res1+"px";
+			ball.style["top"]=res2+"px";
+		judge();
+		},200);
+	}
+	function myboard(event){
+		    myboard=document.getElementById("board");
+		var event=event?event:window.event;
+		// console.log(event.keyCode);
+		if(event.keyCode==37){//按了键盘的⬅️箭头
+			// console.log("left");
+			if(myboard.offsetLeft>0){
+				myboard.style.left=myboard.offsetLeft-40+"px";
+			}
+			
+		}
+		if(event.keyCode==39){//按了键盘的→箭头
+			// console.log("right");
+			if(myboard.offsetLeft<700){
+				myboard.style.left=myboard.offsetLeft+40+"px";
+			}
+			
+		}
+		// console.log(event.keyCode);
+		// console.log(myboard.offsetTop);
+	}
+	document.addEventListener('keydown',myboard,false);
+	function judge(){
+		 myboard=document.getElementById("board");
+		//console.log(ball.offsetTop);
+		//console.log(myboard.offsetTop);
+		 var ballLeft = ball.offsetLeft + ballWidth/2;
+		if(ball.offsetTop>=550){
+			if(ballLeft >= myboard.offsetLeft && ballLeft <= myboard.offsetLeft+myboard.clientWidth){
+				//res2=-res2;
+				disY=-disY;
+				console.log("1111111");
+			}
+		}
+			
+		if(ball.offsetTop>700){
+			alert("game over");
+			clearInterval(timer);
+		}
+			
+	}
+</script>
+</body>
+</html>

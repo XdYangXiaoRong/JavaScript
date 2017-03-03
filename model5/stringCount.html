@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var str = "HELLO guys";
+    var upperCount = 0;
+    var lowerCount = 0;
+     //ascll值65-90对应 A-Z 97-122对应a-z
+    for(var i =0; i<str.length;i++){
+        var code = str.charCodeAt(i);
+        if(code>=65 && code <= 90){
+            upperCount++;
+        }
+        if(code>=97 && code<=122){
+            lowerCount++;
+        }
+    }
+    alert(upperCount);
+    alert(lowerCount);
+</script>
+</body>
+</html>

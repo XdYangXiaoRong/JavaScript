@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>每月节日卡</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	 	*{
+	 		margin:0px;
+	 		padding:0px;
+	 	}
+		.main{
+			width:481px;
+			height:600px;
+			background-color:lightgrey;
+			margin:10px auto;
+		}
+		.up{
+			height:436px;
+		}
+		.up ul li{
+			list-style-type: none;
+			width:100px;
+			height:120px;
+			margin:10px;
+			float:left;
+			background-color:pink;
+			text-align:center;
+			color:white;
+			font-size:25px;
+		}
+		.up ul li:hover{
+			background-color:white;
+			color:red;
+			box-shadow: 5px 5px 20px pink;
+		}
+		.up ul li p{
+			margin-top: 10px;
+		}
+		#text{
+			text-align:center;
+			width:90%;
+			height:100px;
+			line-height: 100px;
+			background-color: white;
+			border-radius:20px;
+			margin:0px auto;
+			font-size:20px;
+		}
+		.up ul li.current{
+			list-style-type: none;
+			width:100px;
+			height:120px;
+			margin:10px;
+			float:left;
+			background-color:white;
+			text-align:center;
+			color:red;
+			font-size:25px;
+		}
+	</style>
+</head>
+<body>
+<div class="main">
+	<div class="up">
+		<ul>
+			<li data-type="0">
+				<div class="month">
+					<p>1</p>
+					<p>JAN</p>
+				</div>
+			</li>
+			<li data-type="1">
+				<div class="month">
+					<p>2</p>
+					<p>FER</p>
+				</div>
+			</li>
+			<li data-type="2">
+				<div class="month">
+					<p>3</p>
+					<p>MAR</p>
+				</div>
+			</li>
+			<li data-type="3">
+				<div class="month">
+					<p>4</p>
+					<p>APR</p>
+				</div>
+			</li>
+			<li data-type="4">
+				<div class="month">
+					<p>5</p>
+					<p>MAY</p>
+				</div>
+			</li>
+			<li data-type="5">
+				<div class="month">
+					<p>6</p>
+					<p>JUN</p>
+				</div>
+			</li>
+			<li data-type="6">
+				<div class="month">
+					<p>7</p>
+					<p>JUL</p>
+				</div>
+			</li>
+			<li data-type="7">
+				<div class="month">
+					<p>8</p>
+					<p>AUG</p>
+				</div>
+			</li>
+			<li data-type="8">
+				<div class="month">
+					<p>9</p>
+					<p>SEP</p>
+				</div>
+			</li>
+			<li data-type="9">
+				<div class="month">
+					<p>10</p>
+					<p>OCT</p>
+				</div>
+			</li>
+			<li data-type="10">
+				<div class="month">
+					<p>11</p>
+					<p>NOV</p>
+				</div>
+			</li>
+			<li data-type="11">
+				<div class="month">
+					<p>12</p>
+					<p>DEC</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div id="text"></div>
+</div>
+<script type="text/javascript" src="每月节日卡.js"></script>
+</body>
+</html>

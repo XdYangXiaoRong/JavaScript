@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>我的qq表情</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="mycanvas" width="600px" height="600px" style="border:1px solid red">
+		如果你看到这句话说明你的浏览器不支持canvas属性
+	</canvas>
+	<!-- <div></div> -->
+<script type="text/javascript">
+	var mycanvas=document.getElementById("mycanvas");
+	var ctx=mycanvas.getContext("2d");//得到上下文
+	ctx.beginPath();
+	ctx.moveTo(300,300);
+	ctx.arc(300,300,200,0,2*Math.PI,false);
+	ctx.fillStyle="#EFE11B";
+	ctx.fill();
+	ctx.closePath();
+
+	ctx.beginPath();
+	//ctx.moveTo(220,250);
+	ctx.arc(220,250,50,Math.PI,Math.PI*2,false);
+	ctx.lineWidth="5";
+	ctx.strokeStyle="black";
+	ctx.stroke();
+	ctx.closePath();
+
+	ctx.beginPath();
+	//ctx.moveTo(220,250);
+	ctx.arc(380,250,50,Math.PI,Math.PI*2,false);
+	ctx.lineWidth="5";
+	ctx.strokeStyle="black";
+	ctx.stroke();
+	ctx.closePath();
+	
+	ctx.beginPath();
+	//ctx.moveTo(220,250);
+	ctx.arc(300,360,80,Math.PI*2*0.1,Math.PI*2*0.4,false);
+	ctx.lineWidth="5";
+	ctx.strokeStyle="grey";
+	ctx.stroke();
+	ctx.closePath();
+
+	ctx.beginPath();
+	//ctx.moveTo(220,250);
+	ctx.arc(200,320,40,0,Math.PI*2,false);
+	//ctx.strokeStyle="black";
+	ctx.fillStyle="pink";
+	ctx.fill();
+	ctx.closePath();
+
+	ctx.beginPath();
+	//ctx.moveTo(220,250);
+	ctx.arc(400,320,40,0,Math.PI*2,false);
+	//ctx.strokeStyle="black";
+	ctx.fillStyle="pink";
+	ctx.fill();
+	ctx.closePath();
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		    * {
+		        padding: 0;
+		        margin: 0;
+		    }
+		    #game {
+		        width: 320px;
+		        height: 480px;
+		        position: relative;
+		        background: url(img/game_bg.jpg) no-repeat;
+		        margin: 100px auto 0;
+		    }
+		    
+		    #score {
+		        height: 45px;
+		        line-height: 48px;
+		        font-size: 18px;
+		        color: white;
+		        text-indent: 62px;
+		    }
+		    
+		    #progress {
+		        background: url(img/progress.png) no-repeat;
+		        width: 180px;
+		        height: 16px;
+		        position: absolute;
+		        left: 63px;
+		        top: 66px;
+		    }
+		    
+		    #menu {
+		        width: 320px;
+		        height: 480px;
+		        position: absolute;
+                left: 0;
+                top: 0;
+                background: rgba(0, 0, 0, 0.3);
+		    }
+		    
+		    #start {
+		        width: 160px;
+		        height: 40px;
+		        font-size: 25px;
+		        text-align: center;
+		        line-height: 40px;
+		        color: white;
+		        position: absolute;
+		        left: 0;
+		        right: 0;
+		        top: 0;
+		        bottom: 0;
+		        margin: auto;
+		        text-shadow: 0 0 8px yellow;
+		    }
+		    
+		    #wolves>img {
+		        position: absolute;
+		    }
+		    
+		</style>
+	</head>
+	<body>
+	    <div id="game">
+	        <p id="score">0</p>
+	        <p id="progress"></p>
+	        <div id="wolves">
+	            
+	        </div>
+	        <div id="menu">
+	            <p id="start">开始游戏</p>
+	        </div>
+	    </div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	// 获取startBtn
+	var startBtn = document.getElementById('start');
+	// 获取menuDiv
+	var menuDiv = document.getElementById('menu');
+	// 获取scoreP
+	var scoreP = document.getElementById('score');
+	// 获取progressP
+	var progressP = document.getElementById('progress');
+	// 获取wolvesDiv
+	var wolvesDiv = document.getElementById('wolves');
+	
+	// 记录当前进度条的宽度
+	var pW = 180;
+	// 进度条定时器
+	var timer1;
+	
+	// 创建狼的定时器
+	var wolfTimer;
+	
+	// 点击开始游戏
+	startBtn.onclick = function() {
+	    menuDiv.style.display = 'none';
+	    scoreP.innerHTML = "0";
+	    progressP.style.width = "180px";
+	    // 改变时间
+	    timer1 = setInterval(changeTime, 100);
+	    // 创建狼
+	    wolfTimer = setInterval(createWolf, 2000);
+	}
+	
+	// 开始计时
+	function changeTime() {
+	    pW--;
+	    progressP.style.width = pW + 'px';
+	    if (pW == 0) {
+	        console.log("游戏结束!!!");
+	        menuDiv.style.display = "block";
+	        startBtn.innerHTML = "重新开始";
+	        pW = 180;
+	        clearInterval(timer1);
+	        clearInterval(wolfTimer);
+	    }
+	}
+	
+	// 存放图片的位置
+    var positions = [
+        {l: "98px", t: "115px"},
+        {l: "17px", t: "160px"},
+        {l: "15px", t: "220px"},
+        {l: "30px", t: '293px'},
+        {l: '122px', t: '273px'},
+        {l: '207px', t: "295px"},
+        {l: "200px", t: "211px"},
+        {l: "187px", t: "141px"},
+        {l: "100px", t: "185px"}
+    ];
+    
+    // 随机数函数
+    function randomNum(x, y) {
+        return Math.floor(Math.random() * (y - x + 1) + x);
+    }
+	
+	
+	// 创建狼
+	function createWolf() {
+	    var img = document.createElement('img');
+	    
+	    // 记录打击状态
+	    img.hit = true;
+	    
+	    // 如果随机出来的数字小于80出来灰太狼
+	    var num = randomNum(1, 100);
+	    img.type = num <= 80 ? 'h' : 'x';
+	    // 随机一个数
+	    var n = randomNum(0, 8);
+	    img.style.left = positions[n].l;
+	    img.style.top = positions[n].t;
+	    img.src = "img/" + img.type + "0.png";
+	    wolvesDiv.appendChild(img);
+	    
+	    // 向上动画
+	    var up = 0;
+	    var down = 5;
+	    var downTimer;
+	    var upTimer = setInterval(function() {
+	        up++;
+	        img.src = "img/" + img.type + up + ".png";
+	        if (up == 5) {
+	            
+	           // 下降动画, 上升动画执行完以后才会执行下降动画
+                downTimer = setInterval(function() {
+                   down--; 
+                   img.src = "img/" + img.type + down + ".png";
+                    if (down == 0) {
+                       // 删除图片
+                       wolvesDiv.removeChild(img);
+                       
+                       // 关闭定时器
+                       clearInterval(downTimer);
+                    }
+                       
+                }, 150);
+	            clearInterval(upTimer);
+	        }
+	    }, 150);
+	    
+	    
+	    // 图片点击事件
+	    img.onclick = function() {
+	        
+	        // 点击第一次才有效果
+	        if (img.hit) {
+	            img.hit = false;
+	        } else {
+	            return;
+	        }
+	        // 清除向上, 向下动画定时器
+	        clearInterval(upTimer);
+	        clearInterval(downTimer);
+	        
+	        var score = scoreP.innerHTML - 0;
+	        if (img.type == "h") {
+	            scoreP.innerHTML = score + 10 + '';
+	        } else {
+	            scoreP.innerHTML = score - 10 + '';
+	        }
+	        
+	        // 打击动画
+	        var hit = 5;
+	        
+	        var hitTimer = setInterval(function() {
+	            hit++;
+	            img.src = "img/" + img.type + hit + '.png';
+	            if (hit == 9) {
+	                // 移除img
+	                wolvesDiv.removeChild(img);
+	                
+	                // 清除定时器
+	                clearInterval(hitTimer);
+	            } 
+	        }, 150);
+	        
+	    }
+	    
+	    
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>

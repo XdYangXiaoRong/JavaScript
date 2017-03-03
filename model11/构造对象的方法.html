@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>创建对象的方法</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	// 方法一:对象字面量的方式
+	// var name="124";
+	// var person={
+	// 	name:"yangxiaorong",
+	// 	sex:"girl",
+	// 	age:"20",
+	// 	say:function(){
+	// 		var name="444";
+	// 		console.log("hello");
+	// 		console.log(this.name);//this此时指向当前对象,指向person,结果为yangxiaorong
+	// 	}
+	// }
+	// console.log(this.name);//this此时指向全局变量
+	// console.log(this.age);//外部没有age属性,所以打印undefine
+	// console.log(person.name);
+	// console.log(person['name']);
+ //    person.say();
+	//方法二:用工厂方式来创建对象(内置对象)
+	// var person=new Object();
+	// person.name="旺财";
+	// person.age="3";
+	// person.work=function(){
+	// 	alert("汪汪汪");
+	// }
+	// console.log(person.name);//旺财
+	// console.log(person.age);//3
+	// person.work();
+	//方法三:用function来模拟无参的构造函数
+	function Person(){}
+		var yxr=new Person();//定义一个function,如果使用new"实例化",该function可以看做一个Class
+		yxr.age="21";
+		yxr.work="eat";
+		yxr.hobby=function(){
+			alert("yxr's hobby is "+yxr.work+" and sleep" );
+		
+		}
+	yxr.hobby();
+	/**方法四:构造函数:用function来模拟参数构造函数来实现
+		1.构造函数首字母大写;
+		2.用 new 关键字实例化对象;
+		3.this 指其上下文形式
+	*/
+	function Pet(name,age,hobby){
+		this._name=name;
+		this._age=age;
+		this._hobby=hobby;
+		this.eat=function(){
+			alert("我叫"+this._name+","+this._age+",爱好是"+this._hobby);
+		}
+	}
+	var zyx=new Pet("zyx","22","yxr");//方法的实例化
+	zyx.eat();
+	/**方法五:用原型方式来创建*/
+	function Dog(){}
+	Dog.prototype.name="旺财";
+	Dog.prototype.age="3";
+	Dog.prototype.eat=function(){
+			alert("我是"+this.name+","+this.age+"岁了");
+	}
+	var wangcai=new Dog();
+	var xiaoqiang=new Dog();
+	alert(wangcai._proto_===Dog.prototype);//false,why?
+	wangcai.eat();
+	xiaoqiang.eat();
+	/**方法六:用混合方式来创建*/
+	function Cat(name,age){
+		this._name=name;
+		this._age=age;
+		this.bark=function(){
+			alert("喵喵喵");
+		}
+	}
+	Cat.prototype.kind="猫科动物";
+	Cat.prototype.hobby=function(){
+		alert("I like fish"+",my name is "+this._name+" my age is "+this._age+".I am"+this.kind);
+	}
+	var whiteCat=new Cat("小白","2");
+	var blackCat=new Cat("小黑","3");
+	whiteCat.hobby();
+	blackCat.hobby();
+	console.log(whiteCat.hasOwnProperty("bark"));//true
+	console.log(whiteCat.hasOwnProperty("kind"));//false
+	console.log(whiteCat.hasOwnProperty("hoddy"));//false
+	/**hasOwnProperty:每个实例对象都有一个hasOwnProperty()方法,用来判断一个属性是本地属性,还是继承自prototype对象的属性.
+	所有继承了 Object.prototype 的对象都会从原型链上继承到 hasOwnProperty 方法，这个方法可以用来检测一个对象是否含有特定的自身属性，和 in 运算符不同，该方法会忽略掉那些从原型链上继承到的属性。
+	*/
+	/*Instanceof运算符的第一个变量是一个对象,第二个变量一般是一个函数对象(obj Instanceof function) a instanceof b判断a是否为b的实例*/
+</script>
+</body>
+</html>

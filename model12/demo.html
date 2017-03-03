@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#one{
+			width:400px;
+			height:400px;
+			background-color: pink;
+			margin-top: 200px;
+			padding-top: 200px;
+		}
+		#two{
+			width:200px;
+			height:200px;
+			background-color: grey;
+			/*margin-top: 20px;*/
+		}
+	</style>
+</head>
+<body>
+<div id="one">
+	<div id="two"></div>
+</div>
+<script type="text/javascript">
+	var first=document.getElementById("one");
+	var second=document.getElementById("two");
+	document.onmousemove=function(event){
+		console.log(first.offsetTop);
+		console.log(second.offsetTop);
+
+	}
+</script>
+</body>
+</html>

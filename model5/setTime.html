@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var d = new Date();
+    d.setFullYear(2015);
+    d.setMonth(5);
+    document.write(d+"<br>");
+   document.write(d.getTime()+"<br>");//我们将取得从 1970/01/01 至今的毫秒数
+
+   var d = new Date();
+   d.setTime(77771564221);//要设置的日期和时间据 GMT 时间 1970 年 1 月 1 日午夜之间的毫秒数。这种类型的毫秒值可以传递给 Date() 构造函数，可以通过调用 Date.UTC() 和 Date.parse() 方法获得该值。以毫秒形式表示日期可以使它独立于时区。
+   document.write(d);
+</script>
+</body>
+</html>

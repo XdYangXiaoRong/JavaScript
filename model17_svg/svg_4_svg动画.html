@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<svg width="800" height="700" style="border:1px solid red">
+	<!-- animate 定义在图形的内部 
+	attributaName 动画属性名称
+	动画属性值的三种控制方式:
+	(1)from 开始值 to 结束值
+	(2)from 开始至 by 过渡值(如果to by同时出现,识别to)
+	(3)values:取值集合,可以是分号分隔的一个或多个值(即:一组数值。但只有一个值时,无法体现动画效 果);
+	实现多个动画:添加多个animate;
+	begin 动画开始的时间, end 属性 用分号分隔的一组值,例 beigin="1s;3s" 表示 1s 时执行一 次,3s 再执行一次(如果之前动画没结束,会立即停止后续效果,从头开始)
+	dur 属性:动画的持续时间;
+	让动画停留在最后一帧:fill 属性: 表示动画间隙的填充方式。取值:"remove" | "freeze"。 remove:默认值。表示动 画结束后直接回到动画开始状态。 freeze:冻结的意思。表示动画结束后保持动画结束时的状 态。 主要注意一点:SVG fill 属性和 animate fill 属性是两个独立的属性。
+	动画无限循环:repeatCount 属性:
+	表示动画执行次数。可以是一个数字,也可以是 "indefinite" 无限循环。另外还有一个 repeatDur 属性:表示动画重复的总时间。即:repeatDur = "1s" 那么动画执行 到一半时就会暂停。
+	多个动画同时执行:增加一个 标签,让元素能够同时实现2个效果为每个;标签添 id ,然后 下一个动画的 begin 值为上一个的 id.end
+	-->
+	<path d="M 200 100 C 300 300 400 150 570 340" fill="none" stroke="blue"></path>
+	<path d="M 200 500 C 340 550 400 200 570 600" fill="none" stroke="blue"></path>
+	<!-- 此时不需要给图形加定位 -->
+	<rect width="30" height="30" fill="red">
+		  <animateMotion  begin="0s" dur="6s" repeatCount="indefinite" path="M 200 100 C 300 300 400 150 570 340" fill="none" stroke="blue" rotate="auto"></animateMotion>
+	</rect>
+	<!-- 此时不需要给图形加定位 -->
+	<circle r="30" fill="red">
+		  <animateMotion  begin="6s" dur="6s" repeatCount="indefinite" path="M 200 100 C 300 300 400 150 570 340" fill="green" stroke="green" rotate="auto"></animateMotion>
+	</circle>
+	<!-- svg动画队列 -->
+	<circle	r="20" fill="blue">
+		<animateMotion id="r1" begin="0s" dur="2s" path="M 200 500 C 340 550 400 200 570 600"></animateMotion>
+	</circle>
+	<circle	r="25" fill="gold">
+		<animateMotion id="r2" begin="r1.end" dur="2s" path="M 200 500 C 340 550 400 200 570 600"></animateMotion>
+	</circle>
+
+</svg>
+</body>
+</html>

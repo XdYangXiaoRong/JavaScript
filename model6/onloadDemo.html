@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    window.onload = function(){ //window.onload 页面加载后执行
+        var btn = document.getElementById("btn");
+        var timer1;
+        var timer2;
+        btn.onclick = function(){
+             showStar();
+        }
+
+       // timer1 = setInterval(function(){
+       //     alert(123456);
+       // },2000);
+       // timer2 = setTimeout(function(){
+       //     document.write("************");
+       //     showStar();
+       // },1000);
+
+        function showStar(){
+            document.write("&&&&&&&*******");
+            setTimeout(function(){
+                document.write("%%%%%%%");
+                showStar();
+            },2000);
+        }
+
+    }
+
+</script>
+<button id="btn">取消</button>
+</body>
+</html>

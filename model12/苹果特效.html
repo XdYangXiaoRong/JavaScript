@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>苹果特效</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.main{
+			/*position: fixed;*/
+			width:1000px;
+			height:230px;
+			
+			margin:0px auto;
+			border:1px solid green;
+		}
+		#box{
+			padding-top: 50px;
+			/*width:1000px;
+			height:130px;*/
+			/*margin-top: 30px;*/
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border:1px solid red;
+		}
+		#box img{
+			width:64px;
+			/*border:1px solid red;*/
+			/*margin-right: 20px;*/
+		}
+	</style>
+</head>
+<body>
+<div class="main">
+	<div id="box">
+		<a href="#"><img src="images/1.png"></a>
+		<a href="#"><img src="images/2.png"></a>
+		<a href="#"><img src="images/3.png"></a>
+		<a href="#"><img src="images/4.png"></a>
+		<a href="#"><img src="images/5.png"></a>
+	</div>
+</div>
+	<script type="text/javascript">
+		var myBox=document.getElementById("box");
+		
+		
+			document.onmouseover=function(event){
+				var myAimg=myBox.getElementsByTagName("img");
+				var event=event?event:window.event;
+				for(var i=0;i<myAimg.length;i++){
+		
+					console.log(myAimg[i]);
+					var x=myAimg[i].offsetLeft+(myAimg[i].offsetWidth)/2;
+					var y=myAimg[i].offsetTop+(myAimg[i].offsetHeight)/2;
+					// console.log(x);
+					// console.log(y);
+					// console.log(event.clientY);
+					var distance=Math.sqrt(Math.pow(event.clientX-x,2)+Math.pow(event.clientY-y,2));
+					console.log(distance);
+					if(distance<250){
+
+						myAimg[i].style.width=280-Math.min(distance,122)+"px";
+					}
+					else{
+						myAimg[i].style.width="64px";
+					}
+				}
+				// console.log(this.offsetWidth);
+				// var x=this.offsetLeft+(this.offsetWidth)/2;
+				// var y=this.offsetTop+(this.offsetHeight)/2;
+				// console.log(this.offsetLeft);
+				// console.log(x);
+				// console.log(y);
+			}
+		// function distance(x,y){
+
+		// }
+	</script>
+</body>
+</html>

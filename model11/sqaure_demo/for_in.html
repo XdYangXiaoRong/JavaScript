@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var arr = ["test1","test2","test3"];
+    for (var i=0;i<arr.length;i++){
+//        alert(typeof i);
+        document.write(arr[i]);
+    }
+    // 数组常用for 循环
+    for(var key in arr){
+        alert(typeof key)
+        document.write(arr[key]);
+    }
+    //for in 枚举
+    var person = {
+        name:"anli",
+        age:"19",
+        sex:"boy",
+    }
+    for (var key in person){
+        document.write(person[key]);
+    }
+
+</script>
+</body>
+</html>

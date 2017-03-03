@@ -1,0 +1,145 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+body{
+	position: relative;
+}
+/*.content{
+	margin:0px auto;
+	width:920px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding:10px;
+	background-color: lightgrey;
+}*/
+.main{
+	margin:50px auto;
+	width:900px;
+	box-sizing: border-box;
+	padding:15px;
+}
+.person{
+	width:100%;
+	height:250px;
+	box-sizing: border-box;
+	border:1px dashed grey;
+	padding:10px;
+	margin-bottom:10px;
+	border-radius: 30px;
+}
+.left{
+	width:30%;
+	height:230px;
+	box-sizing: border-box;
+	/*border:1px solid red;*/
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	float:left;
+}
+.left img{
+	width:90%;
+	height:90%;
+}
+.center{
+	width:45%;
+	height:230px;
+	padding:10px;
+	box-sizing: border-box;
+	float:left;
+	text-indent:2em;
+	font-size: 18px;
+	border:1px dashed grey;
+	background-color: lightblue;
+	border-radius: 10px;
+	color:grey;
+}
+.right{
+	color:white;
+	float:left;
+	width:23%;
+	height:230px;
+	border:1px solid red;
+	box-sizing: border-box;
+	padding-top:50px;
+	margin-left: 10px;
+	border:1px dashed grey;
+	background-color: pink;
+	border-radius:10px;
+}
+.buttons{
+	width:900px;
+	height:40px;
+	line-height: 40px;
+	box-sizing: border-box;
+	margin:10px auto;
+	/*border:1px solid red;*/
+}
+.buttons input[type="button"]{
+	float:right;
+	margin-right: 50px;
+	width:90px;
+	height:35px;
+	background-color: lightgreen;
+	color:white;
+	border:1px double lightgrey;
+	border-radius:5px;
+}
+.text{
+	width:100%;
+	height:500px;
+	background-color:lightgrey;
+	opacity:0.97;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position:absolute;
+	top:10px;
+	display: none;
+}
+.in{
+	width:400px;
+	height:400px;
+	margin:50px auto;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+}
+textarea{
+	margin-left: 20px;
+	width:90%;
+	height:70%;
+}
+.in input[type="button"]{
+	float:right;
+	margin-right: 50px;
+	width:110px;
+	height:35px;
+	background-color: lightblue;
+	color:white;
+	border:1px double lightgrey;
+	border-radius:5px;
+	margin-left: 230px;
+}
+.cut_down a{
+
+	display: none;
+}
+.time,.cut_down{
+	margin-top: 30px;
+	text-align:center;
+}
+/*.person:hover a{
+	display: block;
+}*/
+.in p{
+	height:40px;
+	margin-left: 360px;
+	color:grey;
+	font-size:30px;
+}

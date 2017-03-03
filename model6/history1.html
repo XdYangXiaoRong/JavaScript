@@ -1,0 +1,44 @@
+/NN<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>这是页面1</h1>
+<button id="btn1">跳转</button>
+<button id="btn2">前进</button>
+<button id="btn3">后退</button>
+<button id="btn4">关闭</button>
+<button id="btn5">新窗口</button>
+<script type="text/javascript" src="js/windowDemo.js"></script>
+<script type="text/javascript">
+    var btn1 = getId("btn1");
+    var btn2 = getId("btn2");
+    var btn3 = getId("btn3");
+    var btn4 = getId("btn4");
+    var btn5 = getId("btn5");
+    btn1.onclick = function(){
+        window.location.href = "history2.html";
+    }
+    btn2.onclick = function(){
+        window.history.forward();
+    }
+    btn3.onclick = function (){
+        window.history.back();
+    }
+    btn4.onclick = function(){
+        window.close();
+    }
+    btn5.onclick = function(){
+        window.open("history2.html","test","width=200,height=200,menubar=yes,toolbar=yes");
+    }
+    window.onresize = function(){
+        console.log(screenLeft);
+        console.log(screenTop);
+
+        alert(222);
+    }
+</script>
+</body>
+</html>

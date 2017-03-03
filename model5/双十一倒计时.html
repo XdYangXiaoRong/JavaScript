@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            font-size: 80px;
+            text-align: center;
+            text-shadow: 10px 10px 10px gray;
+            color: green;
+        }
+    </style>
+</head>
+<body onload="showTime()">
+<p>距离双十一开抢:</p>
+<p id="pid"></p>
+<script type="text/javascript">
+    function showTime(){
+        var pId = document.getElementById("pid");
+        var today = new Date().getTime();
+        var sigleDay = new Date(2016,10,11).getTime();
+        var leftTime = (sigleDay - today)/1000;
+        var d = parseInt(leftTime/60/60/24);
+        var h = parseInt((leftTime - d*60*60*24)/60/60);
+        var m = parseInt((leftTime - d*60*60*24 -h*60*60)/60);
+        var s = parseInt(leftTime-d*60*60*24-h*60*60-m*60);
+        pId.innerHTML = d + "天" + h +"小时" + m +"分钟" + s +"秒";
+    }
+    setInterval(showTime,1000);
+</script>
+</body>
+</html>

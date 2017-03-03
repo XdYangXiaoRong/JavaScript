@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<table id="showTable">
+    <thead>
+        <tr>
+            <th>全选<input  class="check-all check" type="checkbox"></th>
+            <th>商品</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>小计</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input class="check" type="checkbox"></td>
+            <td><img src="img/pic1.jpeg" alt=""></td>
+            <td>5000</td>
+            <td class="count">
+                <span class="reduce"></span>
+                <input type="text" value="1">
+                <span class="add">+</span>
+            </td>
+            <td class="subTotal">5000</td>
+            <td class="del">删除</td>
+        </tr>
+        <tr>
+            <td><input class="check" type="checkbox"></td>
+            <td><img src="img/pic2.jpg" alt=""></td>
+            <td>3000</td>
+            <td class="count">
+                <span class="reduce"></span>
+                <input type="text" value="1">
+                <span class="add">+</span>
+            </td>
+            <td class="subTotal">3000</td>
+            <td class="del">删除</td>
+        </tr>
+        <tr>
+            <td><input class="check" type="checkbox"></td>
+            <td><img src="img/pic2.jpg" alt=""></td>
+            <td>5000</td>
+            <td class="count">
+                <span class="reduce"></span>
+                <input type="text" value="1">
+                <span class="add">+</span>
+            </td>
+            <td class="subTotal">5000</td>
+            <td class="del">删除</td>
+        </tr>
+        <tr>
+            <td><input class="check" type="checkbox"></td>
+            <td><img src="img/pic2.jpg" alt=""></td>
+            <td>8000</td>
+            <td class="count">
+                <span class="reduce"></span>
+                <input type="text" value="1">
+                <span class="add">+</span>
+            </td>
+            <td class="subTotal">8000</td>
+            <td class="del">删除</td>
+        </tr>
+    </tbody>
+</table>
+<div id="showInfo">
+    已选商品 <span id="counts">0</span>件 合计: <span id="money">0</span>元
+</div>
+<!-- <script type="text/javascript" src="js/index.js"></script> -->
+<script type="text/javascript" src="js/me.js"></script>
+</body>
+</html>

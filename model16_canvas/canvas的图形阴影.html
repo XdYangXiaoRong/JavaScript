@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas的图形阴影</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<canvas id="mycanvas" width="600" height="400" style="border:2px dashed grey">
+	你看不见我才是正常的!!!
+</canvas>
+<script type="text/javascript">
+	var mycanvas=document.getElementById("mycanvas");
+	var ctx=mycanvas.getContext("2d");
+	ctx.arc(300,200,150,0,2*Math.PI,false);//绘制一个圆
+	ctx.fillStyle="red";//给圆填充上颜色,红色
+	// ctx.shadowOffsetX=15;//阴影在x轴上的偏移量
+	// ctx.shadowOffsetY=15;//阴影在y轴上的偏移量
+	/*如果想要四面都有阴影.则直接写shadowBlur和shadowColor即可*/
+	ctx.shadowBlur=100;//阴影的模糊程度,值越大,则越模糊
+	ctx.shadowColor="yellow";//阴影的颜色
+	ctx.fill();
+</script>
+</body>
+</html>

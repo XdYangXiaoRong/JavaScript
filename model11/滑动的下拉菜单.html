@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>滑动下拉菜单</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+    		padding: 0;
+   			 margin: 0;
+		}
+		dl dt{
+			width:200px;
+			/*height:50px;*/
+			line-height: 50px;
+			text-align:center;
+			background-color:lightgrey;
+			border:1px solid grey;
+			margin:0px auto;
+			font-size: 18px;
+			color:#999;
+			box-sizing: border-box;
+		}
+		dd span{
+			display: block;
+			width:200px;
+			height:40px;
+			line-height: 40px;
+			text-align: center;
+			border-bottom:1px solid grey;
+			box-sizing: border-box;
+			/*margin-left: -40px;*/
+			background-color:pink;
+			color:white;
+			margin:0px auto;
+		}
+		dd{
+			/*position: absolute;*/
+			height:0px;
+			overflow: hidden;
+			transition: 1s all;
+		}
+	</style>
+</head>
+<body>
+<dl>
+	<dt>我喜欢的零食</dt>
+	<dd>
+		<span>天使土豆片</span>
+		<span>白巧克力</span>
+		<span>麻辣牛肉</span>
+	</dd>
+</dl>
+<dl>
+	<dt>我喜欢的宠物</dt>
+	<dd>
+		<span>猫咪</span>
+		<span>阿拉斯家雪橇犬</span>
+		<span>二哈</span>
+		<span>萨摩耶</span>
+	</dd>
+</dl>
+<dl>
+	<dt>我喜欢的明星</dt>
+	<dd>
+		<span>周杰伦</span>
+		<span>邓超</span>
+		<span>陈奕迅</span>
+		<span>蔡依林</span>
+	</dd>	
+</dl>
+<script type="text/javascript">
+window.onload=function(){
+	
+	var myitem=new getItem("dl");
+}
+	function getItem(item){
+		var myli=document.getElementsByTagName(item);
+		for(var i=0;i<myli.length;i++){
+			myli[i].onmouseover=function(){
+				var mydd=this.getElementsByTagName("dd")[0];
+				var myspan=mydd.getElementsByTagName("span");
+				mydd.style.height=myspan.length*40+"px";
+			}
+			myli[i].onmouseout=function(){
+				this.getElementsByTagName("dd")[0].style.height="0px";
+			}
+		}
+	}
+
+</script>
+</body>
+</html>

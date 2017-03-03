@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<svg width="400" height="400" style="border: 1px solid green">-->
+    <!--<ellipse rx="100" ry="50" cx="200" cy="200" stroke="red" fill="none"></ellipse>-->
+    <!--<ellipse rx="100" ry="50" cx="250" cy="250" stroke="blue" fill="none"></ellipse>-->
+
+<!--</svg>-->
+<svg width="800" height="600" style="border: 1px solid green">
+    <!--<path d="M 100 100 L 200 300 300 100 M 400 400 L600 100 L300 150" fill="none" stroke="blue"></path>-->
+    <!--<path d="M 100 100 L -50 500" fill="none" stroke="blue"></path>-->
+    <!--<path d="M100 100 Q 200 200 300 100" fill="none" stroke="blue"></path>-->
+    <!--<path d="M100 100 C 200 0 300 200 400 100" fill="none" stroke="blue"></path>-->
+    <path d="M100 50 A80 200 -80 1 1 200 200" fill="none" stroke="blue"></path>
+    path绘制路径
+    M moveto
+    L lineto
+    V vertical画垂直线
+    H horizontal画水平线
+    C curveto 三次贝塞尔曲线 两个控制点
+    Q quadratic 二次贝塞尔曲线 一个控制点
+    A 弧线 (rx ,ry,deg,flag1,flag2,x,y) rx ry 为x轴y轴半径,deg旋转角度
+        flag1 (0/1)当为0,表示小角度弧线 当为1时表示大角度弧线
+        flag2(0/1) 从起到终点的方向, 1为顺时针 0 为逆时针
+
+    注: 1.指令重复时,后面的可以省略
+        2.指令为大写时,后面的坐标为绝对坐标
+        指令为小写时,后面的坐标为相对坐标
+
+
+</svg>
+</body>
+</html>

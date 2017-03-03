@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js赋值</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		// var a;
+		// a=5;
+		// a++;
+		// alert("a的值为:"+a);
+		// var b=3;
+		// ++b;
+		// alert("b的值为:"+b);
+		var a=10;
+		var b=5;
+		var c=b++;//b++先将b的值赋给C之后 b增1 b=b+1
+		var d=++b;// ++b 先自增1 b=b+1,之后b的值赋给d
+		alert(b);//b=7
+		alert(c);//c=5
+		alert(d);//d=7
+		var f=--d+3;
+		alert(f);//f=9
+		var e=(f++)+(++a);
+		alert("e的值为:"+e);//20
+		alert("f的值为:"+f);//10
+		alert("a的值为:"+a);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

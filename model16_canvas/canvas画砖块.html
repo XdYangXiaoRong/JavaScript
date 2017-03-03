@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>动态的画砖块</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<canvas id="mycanvas" width="408" height="250" style="border:1px solid gray">
+	看不到我!
+</canvas>
+<script type="text/javascript">
+	(function(){
+		window.start=(function(){
+			return window.start||
+			function(callback){
+				window.setTimeout(callback,1000/60);
+			}
+		})();
+		var ctx=null;
+		var Bricks={
+			col:5,
+			gap:2,
+			w:80,
+			h:20,
+			canvas:document.getElementById("mycanvas"),
+			init:function(){
+				this.width=this.canvas.width;
+				this.height=this.canvas.height;
+				this.row=3;
+				this.count=[this.row];
+				for(var i=0;i<this.row;i++){
+					this.count[i]=[this.col];//创建一个3*5的数组
+				}
+				this.animate();
+				
+			},
+			animate:function(){
+				Bricks.play=start(Bricks.animate);
+				Bricks.draw();
+			},
+			draw:function(){
+				for(var i=0;i<this.row;i++){
+					for(var j=0;j<this.col;j++){
+						if(this.canvas.getContext&&this.canvas.getContext("2d")){
+							console.log("hello");
+							ctx=this.canvas.getContext("2d");
+							ctx.fillStyle=this.gradient(i);
+							ctx.fillRect(this.x(j),this.y(i),this.w,this.h);
+						}
+					}
+				}
+			},
+			x:function(col){
+				return col*this.w+this.gap*col;
+			},
+			y:function(row){
+				return row*this.h+this.gap*row;
+			},
+			gradient:function(row){
+				switch(row){
+					case 0:return this.gradientPurple?this.gradientPurple:this.gradientPurple=this.makeGradient(row,'#bd06f7','#9604C7');
+					case 1:return this.gradientRed?this.gradientRed:this.gradientRed=this.makeGradient(row,'#f9064a','#c7043b');
+					case 2:return this.gradientGreen?this.gradientGreen:this.gradientGreen=this.makeGradient(row,'#faa105','#c77f04');
+					default:return this.gradientGreen?this.gradientGreen:this.gradientGreen=this.makeGradient(row,'#faa105','#c77f04');
+
+				}
+			},
+			makeGradient:function(row,color1,color2){
+				var y=this.y(row);
+				var grad=ctx.createLinearGradient(0,y,0,y+this.h);
+				grad.addColorStop(0,color1);
+				grad.addColorStop(1,color2);
+				return grad;
+			}
+		}
+		window.onload=function(){
+			Bricks.init();
+			// Bricks.draw();
+		}
+	})();
+</script>
+</body>
+</html>

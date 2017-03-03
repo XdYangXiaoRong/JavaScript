@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            font-size: 30px;
+            color: red;
+            text-align: center;
+            text-shadow: 10px 1px 10px gray;
+
+        }
+    </style>
+</head>
+<body>
+<p>当前时间是:</p>
+<p id="pId"></p>
+<script type="text/javascript">
+    function timeShow(){
+        var today = new Date();
+        var y = today.getFullYear();
+        var m = today.getMonth()+1;
+        var d = today.getDate();
+        var h = today.getHours();
+        var min = checkTime(today.getMinutes());
+        var s = checkTime(today.getSeconds());
+        var pShow = document.getElementById("pId");
+        pShow.innerHTML = y+"年"+m+"月"+d+"日"+h+"小时"+min+"分钟"+s+"秒";
+    }
+    function checkTime(i){
+        if(i<10){
+            return "0"+i;
+        }else{
+            return i;
+        }
+    }
+    setInterval(timeShow,1000);
+</script>
+</body>
+</html>

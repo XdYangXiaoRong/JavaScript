@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas画圆</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<canvas id="mycanvas" width="600px" height="600px" style="border:1px solid red">
+	如果你看到这句话说明你的浏览器不支持canvas属性
+</canvas>
+<script type="text/javascript">
+	var mycanvas=document.getElementById("mycanvas");
+	var ctx=mycanvas.getContext("2d");//得到上下文
+
+	ctx.beginPath();
+	ctx.moveTo(300,300);//移动到圆心开始画
+	ctx.arc(300,300,200,0,2*Math.PI*0.1,false);
+	ctx.fillStyle="red";
+	ctx.fill();
+	ctx.closePath();
+
+	ctx.beginPath();
+	ctx.moveTo(300,300);
+	ctx.arc(300,300,200,2*Math.PI*0.1,2*Math.PI*0.3,false);
+	ctx.fillStyle="green";
+	ctx.fill();
+	ctx.closePath();
+
+	ctx.beginPath();
+	ctx.moveTo(300,300);
+	ctx.arc(300,300,200,2*Math.PI*0.3,2*Math.PI*0.6,false);
+	ctx.fillStyle="blue";
+	ctx.fill();
+	ctx.closePath();
+
+	ctx.beginPath();
+	ctx.moveTo(300,300);
+	ctx.arc(300,300,200,2*Math.PI*0.6,2*Math.PI,false);
+	ctx.fillStyle="yellow";
+	// ctx.strokeStyle="pink";
+	// ctx.strokeWidth="10";
+	ctx.fill();
+	ctx.closePath();
+</script>
+</body>
+</html>

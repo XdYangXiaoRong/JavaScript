@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var str = "hello guys"; //字符串直接声明定义
+    var str1 = new String("hello You");//引用类型
+    var strLength = str.length; //length字符串长度
+   // alert(strLength);
+   // alert(str[0]);
+   // alert(str.charAt(0));//获取下标为0的字符
+   // alert(String.fromCharCode(97)); //ascll 转化为英文字符
+
+    var str2 = "today is friday today is friday";
+        alert(str2.indexOf("fri")); //第一次出现的位置 ,若不存在,返回-1;
+//    alert(str2.lastIndexOf("fri"));//最后一次出现的位置
+    var str3 = "hello anli hello anli hello anli again";
+//    alert(str3);
+    var str3_1 = str3.replace(/anli/g,"doudou"); //文本替换
+        alert(str3_1);
+    var str4 = "Hello-qing-Yun";
+    var str4_1 = str4.substring(6,str4.length); //截取字符串 substring(start,end);
+        alert(str4_1);
+        alert(str4.toUpperCase());
+        alert(str4.toLowerCase());
+    var str4_2 = str4.split("-");//分割成数组
+     alert(str4_2);
+
+</script>
+</body>
+</html>

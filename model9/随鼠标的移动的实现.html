@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flying girl</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			background-color:black;
+		}
+		.girl{
+			width:200px;
+			height:200px;
+			background-image: url("girl.jpg");
+			background-repeat: no-repeat;
+			background-size:100%;
+			overflow: hidden;
+			position: absolute;
+			top:0px;
+			left:0px;
+		}	
+	</style>
+</head>
+<body>
+	<div class="girl" id="mygirl"></div>
+	<script type="text/javascript">
+		var baby=document.getElementById("mygirl");
+		document.onmousemove=function(event){
+			// baby.style.marginLeft=event.clientX-100+"px";
+			// baby.style.marginTop=event.clientY-100+"px";
+			baby.style.left=event.clientX-100+"px";
+			baby.style.top=event.clientY-100+"px";
+		}
+	</script>
+</body>
+</html>

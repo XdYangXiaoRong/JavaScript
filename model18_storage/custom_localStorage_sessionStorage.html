@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>客户信息管理网站</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#allInformation{
+			width:800px;
+			height: 500px;
+			margin:0px auto;
+			background-color: lightgrey;
+		}
+		fieldset{
+			width:800px;
+			height:320px;
+			margin:0px auto;
+			box-sizing:border-box;
+			padding:20px;
+		}
+		.onePerson{
+			width:200px;
+			height:100px;
+			float:left;
+			overflow: hidden;
+			background-color: white;
+			box-sizing: border-box;
+			border:1px solid grey;
+		}
+	</style>
+</head>
+<body>
+<fieldset>
+	<legend>客户信息管理网站</legend>
+	<table border="1">
+		<tr>
+			<td>姓名</td>
+			<td>
+				<input type="text" name="" id="userName">
+			</td>
+		</tr>
+		<tr>
+			<td>邮箱</td>
+			<td>
+				<input type="text" name="" id="email">
+			</td>
+		</tr>
+		<tr>
+			<td>电话</td>
+			<td>
+				<input type="text" name="" id="telephone">
+			</td>
+		</tr>
+		<tr>
+			<td>备注</td>
+			<td>
+				<input type="text" name="" id="tips">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" name="" value="保存" onclick="saveData()">
+			</td>
+		</tr>
+	</table>
+	<hr>
+	根据姓名检索:<input type="text" name="" id="search">
+	<input type="button" name="" value="检索" onclick="showInfo()">
+	<hr>
+
+	<p id="show"></p>
+</fieldset>
+<div id="allInformation"></div>
+<script type="text/javascript" src="custom_localStorage_sessionStorage.js"></script>
+</body>
+</html>

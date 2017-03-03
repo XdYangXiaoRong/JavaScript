@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>沿边框滚动的小球</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#ball{
+			width:50px;
+			height:50px;
+			border-radius: 50%;
+			background-color:red;
+			position:absolute;
+			top:0px;
+			left:0px;
+		}
+	</style>
+</head>
+<body>
+<div id="ball"></div>
+<script type="text/javascript">
+	var myball=document.getElementById("ball");
+	// var timer1;
+	// var timer2;
+	// var timer3;
+	// var timer4;
+
+	function left_right(n){
+		myball.style.left=myball.offsetLeft+n+"px";
+	}
+	function right_bottom(n){
+		myball.style.top=myball.offsetTop+n+"px";
+	}
+	function right_left(n){
+		myball.style.left=myball.offsetLeft-n+"px";
+	}	
+	function bottom_topleft(n){
+		myball.style.top=myball.offsetTop-n+"px";	
+	}
+	function start(x){
+		var timer=setInterval(function(){
+			myball=document.getElementById("ball");
+			if((myball.offsetLeft<document.body.clientWidth-x)&&(myball.offsetTop==0)){
+				left_right(x);
+			}
+			else if((myball.offsetTop<700)&&(myball.offsetLeft>=document.body.clientWidth-x)){
+				right_bottom(x);
+			} 
+			else if(myball.offsetLeft>0){
+				right_left(x);
+			}
+			 else if(myball.offsetTop>0){
+				bottom_topleft(x);
+			}
+		},100);
+	
+	}
+	start(50);
+		
+</script>
+</body>
+</html>

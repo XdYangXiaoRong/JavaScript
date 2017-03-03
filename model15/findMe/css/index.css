@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+    width: 600px;
+    height: 650px;
+    background-color: rgba(0,255,0,0.3);
+    border: 3px solid goldenrod;
+    margin: 50px auto;
+    position: relative; /*绝对定位时,要求父元素为非static*/
+    /*left: 200px;*/
+
+}
+.timeScore{
+    height: 50px;
+    width: 100%;
+    background-color: darkgray;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+.lTime{
+   float: left;
+}
+.rScore{
+    float: right;
+}
+.content{
+    width: 600px;
+    height: 600px;
+}
+.content img{
+    width: 100%;
+    height: 100%;
+
+}
+.wrap{
+    width: 600px;
+    height: 650px;
+    position: absolute;
+    left: 0;
+    top:0;
+    background: rgba(0,0,255,0.3);
+}
+.start{
+    width: 200px;
+    height: 80px;
+    border-radius: 10%;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -100px;
+    margin-top: -40px;
+    background-color: darkred;
+    color: white;
+    font-size: 50px;
+    line-height: 80px;
+    text-align: center;
+
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onkeyup,onkeydown,onkeypress</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#change{
+			width:100px;
+			height:100px;
+			background-color: lightgrey;
+		}
+	</style>
+</head>
+<body>
+<form name="myform">
+	<input type="text" name="userName" id="userName">
+	<input type="text" name="nameAgain" id="nameAgain">
+	<input type="button" name="mouse" value="click me!">
+	<div id="change"></div>
+</form>
+	<script type="text/javascript">
+		(function(){
+			var init=function(){
+				var myName=document.getElementById('userName');
+				var myName2=document.getElementById('nameAgain');
+				var mybutton=document.forms.myform.mouse;
+				var mychange=document.getElementById("change");
+				var myinput=function(){
+				
+					if(myName.value.length<10){
+					alert("请确保你输入的字符数>=10");
+					}
+					myName2.value=document.getElementById('userName').value;
+				
+				};
+				window.addEventListener('change',myinput,false);
+				myName.onfocus=function(){
+					this.style.backgroundColor="pink";
+				}
+				myName.onblur=function(){
+					this.style.backgroundColor="lightgrey";
+				}
+				mybutton.onclick=function(){
+					alert("你是猪吗?");
+				}
+				mychange.onmouseover=function(){
+					console.log("onmouseover");
+					this.style.backgroundColor="red";
+					this.style.width='200px';
+				}
+				mychange.onmousemove=function(){
+					console.log("onmousemove");
+					this.style.backgroundColor="green";
+					this.style.width='100px';
+				}
+				mychange.onmouseout=function(){
+					console.log("onmouseout");
+					this.style.backgroundColor="pink";
+					this.style.width='200px';
+					
+				}
+				// mychange.onmouseenter=function(){
+				// 	console.log("onmouseenter");
+				// 	this.style.backgroundColor="yellow";
+				// 	this.style.width='100px';
+
+				// }
+				mychange.onmouseleave=function(){
+					console.log("onmouseleave");
+					this.style.backgroundColor="blue";
+					this.style.width='100px';
+					
+				}
+			};
+			window.addEventListener('load',init,false);
+			
+			// window.addEventListener('input',myinput,false);
+			// window.addEventListener('keyup',myinput,false);
+		})();
+		
+	</script>
+</body>
+</html>

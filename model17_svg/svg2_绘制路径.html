@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>svg2_绘制路径</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<svg width="800" height="600" style="border:1px dashed grey">
+	<!-- <path	d="M 100 80 L 200 300 300 100 z" fill="none" stroke="blue"> -->
+	<!-- <path	d="M 100 80 l 200 300 300 100 z" fill="none" stroke="blue"> -->
+	<path d="M200 200 A 200 200 0 0 1 400 400" fill="none" stroke="red">
+	<!-- path绘制路径
+	M moveto
+	L lineto
+	V vertical 垂直画线
+	H horizontal 画水平线
+	Z 闭合曲线
+	C curveto 三次贝塞尔曲线 两个控制点	M X0 Y0 C X1 Y1 X2 Y2 ENDX ENDY
+	Q quadratic 二次贝塞尔曲线 一个控制点  M X0 Y0 Q X1 Y1 X Y
+	A 弧线(rx,ry,deg,flag1,flag2,x,y) rx,ry 为x轴y轴半径,deg 旋转的角度
+	flag1(0/1):当为0时是小角度,为1时是大角度
+	flag2(0/1):当为0时为逆时针,为1时为顺时针
+	x,y 终点坐标;
+	s(x2,y2,endx,endy)是三次贝塞尔曲线(C)的光滑版本,s第一个控制点是上一个贝塞尔曲线的第二个控制点的镜像;
+	T(endX,endY)是Q(二次贝塞尔曲线)的光滑版本,T的控制点是上一个二次贝塞尔曲线的镜像;
+	注:指令重复时,后面的可以省略 
+	指令为大写时,后面的坐标为绝对坐标;
+	指令为小写时,后面的坐标为相对坐标-->
+
+</svg>
+</body>
+</html>

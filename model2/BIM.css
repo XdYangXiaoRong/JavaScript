@@ -1,0 +1,100 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+.main{
+	width:1000px;
+	height:500px;
+	margin:50px auto;
+	background-color:#F3F3F3;
+}
+.left{
+	width:50%;
+	height:100%;
+	box-sizing:border-box;
+	float:left;
+	display:flex;
+	flex-direction:column;
+	
+	align-items:center;
+	align-content:space-around;
+}
+.left p{
+	margin:20px auto 20px 70px;
+	font-size:20px;
+	font-weight: bolder;
+}
+.left label{
+	margin-left: -40px;
+}
+.right{
+	width:50%;
+	height:100%;
+	box-sizing:border-box;
+	float:left;
+}
+
+input[type="text"]{
+	width:200px;
+	height:27px;
+	margin:20px auto;
+	margin-left:30px;
+	background-color:#eff8ff;
+}
+#show{
+	width:85%;
+	height:50px;
+	margin-bottom:20px;
+	margin-left:30px;
+	background-color:yellow;
+	color:green;
+	font-size:20px;
+	/*font-weight:bold;*/
+}
+.left input[type="button"]{
+	width:200px;
+	height:25px;
+	margin-left: -25px;
+	background-color:#37a;
+	color:white;
+	border-radius:20px;
+}
+.right table{
+	margin:30px auto;
+	width:400px;
+	height:125px;
+	border-collapse:collapse;
+
+}
+.right p {
+	/*display: block;*/
+	margin:30px auto 10px 45px;
+	font-weight:bolder;
+	font-size:20px;
+}
+.rigth th,.right td{
+	text-align:center;
+}
+.zero{
+	background-color:#8DD8F8;
+}
+.one{
+	background-color:rgb(204, 204, 204);
+}
+.two{
+	background-color:rgb(102, 204, 0);
+}
+.three{
+	background-color:rgb(255, 255, 0);
+}
+.four{
+	background-color:rgb(255, 153, 0);
+}
+th:nth-of-type(1){
+	width:70px;
+}
+td:nth-of-type(1){
+	width:70px;
+}
+
+

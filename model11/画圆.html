@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>画100个圆</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#canvas{
+			width:1100px;
+			height:1100px;
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script type="text/javascript">
+// window.onload=function(){
+// 	var newCircle;
+// 	var x;
+// 	var y;
+// 	var radius;
+// 	var canvas=document.getElementById("canvas");;
+// 	var cxt=canvas.getContext("2d");
+// 		for(var i=0;i<100;i++){
+// 			// newCircle=document.createElement("div");
+			
+// 				cxt.beginPath();
+// 			 x=Math.random()*1000;
+// 			 y=Math.random()*1000;
+// 			 radius=Math.random()*20;
+// 			 console.log(x);
+// 			 console.log(y);
+// 			 console.log(radius);
+// 			cxt.beginPath();
+// 			cxt.arc(x,y,radius,0,360,false);
+// 			cxt.fillStyle="red";//填充颜色,默认是黑色
+// 			cxt.fill();//画实心圆
+// 			cxt.closePath();
+// 			 // canvas.appendChild(newCircle);
+// 		}
+
+// }
+window.onload=function(){
+    for(i=0;i<100;i++){
+    var canvas=document.getElementById("canvas");
+    var cxt=canvas.getContext("2d");
+    //画一个空心圆
+//    cxt.beginPath();
+//    cxt.arc(200,200,50,0,360,false);
+//    cxt.lineWidth=1;
+//    cxt.strokeStyle="green";
+//    cxt.stroke();//画空心圆
+//    cxt.closePath();
+
+    //画一个实心圆
+    cxt.beginPath();
+    cxt.arc(Math.random()*1500,Math.random()*1000,Math.random()*50,0,360,false);
+    cxt.fillStyle="pink";//填充颜色,默认是黑色
+    cxt.fill();//画实心圆
+    cxt.closePath();
+    }
+    }
+// 		var canvas=document.getElementById("canvas");
+// var cxt=canvas.getContext("2d");
+// //画一个空心圆
+// cxt.beginPath();
+// cxt.arc(200,200,50,0,360,false);
+// cxt.lineWidth=5;
+// cxt.strokeStyle="green";
+// cxt.stroke();//画空心圆
+// cxt.closePath();
+// //画一个实心圆
+// cxt.beginPath();
+// cxt.arc(200,100,50,0,360,false);
+// cxt.fillStyle="red";//填充颜色,默认是黑色
+// cxt.fill();//画实心圆
+// cxt.closePath();
+// //空心和实心的组合
+// cxt.beginPath();
+// cxt.arc(300,300,50,0,360,false);
+// cxt.fillStyle="red";
+// cxt.fill();
+// cxt.strokeStyle="green";
+// cxt.stroke();
+// cxt.closePath();
+// }
+</script>
+</body>
+</html>

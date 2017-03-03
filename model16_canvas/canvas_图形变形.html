@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas图形变形</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<canvas id="mycanvas" width="600" height="400" style="border:2px dashed grey">
+	你看不见我才是正常的!!!
+</canvas>
+<script type="text/javascript">
+	var mycanvas=document.getElementById("mycanvas");
+	var ctx=mycanvas.getContext("2d");
+	ctx.beginPath();
+	ctx.save();//保存当前的状态
+	ctx.translate(100,200);//将画布的中心轴线移到原来画布的(100,100)处,从现在开始,所有的图像的坐标都是相对于这个点而言
+	ctx.fillStyle="red";
+	ctx.rotate(Math.PI/6);//相对于坐标原点顺时针旋转旋转60deg
+	ctx.fillRect(0,0,200,200);
+	ctx.closePath();
+
+	/****关于怎么让那一个图形以自己的圆心为中心点旋转????*/
+	ctx.beginPath();
+	ctx.restore();//恢复到离他最近的那个save状态,即坐标原点恢复到(0,0),画布的左上角
+	ctx.translate(75,75);//因为旋转是以坐标原点为中心的,所以将坐标原点移动到图形的中心点处,图形就可以以自己的中心点为中心来旋转
+	ctx.fillStyle="blue";
+	ctx.rotate(Math.PI/6);
+	ctx.rect(-75,-75,150,150);
+	ctx.fill();
+	ctx.closePath();
+</script>
+</body>
+</html>

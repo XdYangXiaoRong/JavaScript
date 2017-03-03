@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js动画的实现</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		p{
+			width:200px;
+			height:30px;
+			font-size: 30px;
+			color:green;
+			position: absolute;
+			top:20px;
+			left:0px;
+		}
+	</style>
+</head>
+<body>
+<p>hello,大傻逼</p>
+<script type="text/javascript">
+	var timer=setInterval(function(){
+		var myp=document.getElementsByTagName("p")[0];
+		if(myp.offsetLeft<document.body.clientWidth){
+			myp.style.left=myp.offsetLeft+5+"px";
+		}
+		else{
+			myp.style.left="0px";
+		}
+	},100);
+</script>
+</body>
+</html>

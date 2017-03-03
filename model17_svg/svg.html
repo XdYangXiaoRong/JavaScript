@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>svg</title>
+</head>
+<body>
+<!-- 若是独立文件,必须有头部声明<?xml version="1.0"?> -->
+<!-- <svg html5标签> -->
+<svg width="600" height="600" style="border:1px dashed grey">
+	<line x1="100" y1="10" x2="200" y2="10" stroke="red" stroke-width="10"  stroke-linecap="round"></line>
+	<rect x="50" y="30" width="200" height="100" fill="blue" rx="20" ry="30"></rect>
+	<circle cx="300" cy="50" r="40"  fill="grey"></circle>
+	<ellipse cx="300" cy="300" rx="60" ry="40" fill="red"></ellipse>
+	<polyline points="100,180 200,190 200,250 100,180" stroke="pink" stroke-width="5" fill="none"></polyline>	
+	<polygon points="300 150 480 180 500 254 300 150" fill="gold"></polygon>
+	<!-- 1.画直线 line x1,y1,起始点坐标,y1,y2,终点坐标,stroke-width 线宽,stroke-dasharry 绘制虚线,stroke-linecap 绘制线段端点(round:圆头,butt:默认值,端点是垂直于线段边缘的平直边缘,square:端点是在线段边缘处一线宽为长,端点是在选段边缘 处以线宽为长、以一半线宽为宽的矩形);
+	2.画矩形:rect 绘制矩形 x,y起始点坐标,width,height为宽高,fill 为填充颜色,stroke 为绘制颜色,stroke-width 线宽,stroke-dasharry 绘制虚线,stroke-linecap 绘制线段端点(round:圆头,butt:默认,square:方形);
+	3.画圆 circle cx,cy 为圆心坐标点,r为半径;
+	4.画椭圆:ellipse cx,cy 为椭圆的圆心,rx ry为x半径,y半径;
+	5.折线:polyline points="100,100 200,100 200,250,200,140"(中间的逗号可以随便用);
+	6.多边形:polygon points="........"
+	fill-rule:填充法则:
+	(1)非零法则(nonzero):
+	首先确定填充方向,从图像中任意做一条射线,检测检测射线与绘制方向的交点,从0计数,若从左往右穿过射线,则加一,若从右往左则减一,;若结果为0则认为在图形的外部,若非0则认为在图形的内部;
+	(2)奇偶法则:evenodd
+	从图形任意做一条射线,判断交点的个数,若为奇数,则认为在图形的内部,偶数则认为在图形的外部;
+	-->
+</svg>
+</body>
+</html>

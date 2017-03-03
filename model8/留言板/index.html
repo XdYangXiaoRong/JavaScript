@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>留言板</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<form>
+			<div class="main">
+				<div class="person">
+					<div class="left">
+						<img src="hg.jpg">
+					</div>
+					<div class="center">我是一个帅气的boy!!哈哈哈哈</div>
+					<div class="right">
+						<P class="time">2016-11-11</P>
+						<p class="cut_down">
+							<a href="#">删除</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		
+		<div class="buttons">
+			<input type="button" name="" value="留言" onclick="show()">
+		</div>
+	</form>
+	<div class="text">
+		<div class="in">
+			<p onclick="hideText()">X</p>
+			<textarea id="write"></textarea>
+			<input type="button" name="" value="确定留言" onclick="get()">
+		</div>
+	</div>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

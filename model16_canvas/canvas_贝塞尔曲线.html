@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>贝塞尔曲线</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<canvas id="mycanvas" width=400 height=400 style="border:3px dashed grey">如果你看到这段文字，说明你的浏览器弱爆了
+	</canvas>
+	<script type="text/javascript">
+		var mycanvas=document.getElementById("mycanvas");
+		var ctx=mycanvas.getContext("2d");
+
+		/**两个固定点的贝塞尔曲线:context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y)
+		cp1x:第一个控制点的x坐标,cp1y:第一个控制点的y坐标,cp2x:第二个控制点的x坐标,cp2y:第二个控制点的y坐标;x,y:终点坐标*/
+		ctx.beginPath();
+		ctx.moveTo(100,100);
+		ctx.bezierCurveTo(150,50,180,190,300,100);
+		ctx.strokeStyle = "red";
+		ctx.stroke();
+		ctx.closePath();
+
+		/**是一个点固定的杯赛而曲线:context.quadraticCurveTo(qcpx,qcpy,qx,qy):qcpx:二次样条曲线控制点x坐 标 qcpy:二次样条曲线控制点y坐标,qx:终点的x坐标,  qy:终点的y坐标 */
+		ctx.beginPath();
+		ctx.moveTo(200,200);
+		ctx.quadraticCurveTo(250,288,389,140);
+		ctx.strokeStyle = "blue";
+		ctx.stroke();
+		ctx.closePath();
+
+
+	</script>
+</body>
+</html>

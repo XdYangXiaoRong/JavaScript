@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mycanvas</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<!-- canvas 画布大小改变,width height 注意不能写在style里面 -->
+<canvas id="mycanvas" width="600px" height="500px" style="border:1px solid blue">
+	这是canvas效果,可能你的浏览器并不支持!
+</canvas>
+<script type="text/javascript">
+	var mycanvas=document.getElementById("mycanvas");
+	var ctx=mycanvas.getContext("2d");//得到上下文
+
+	/*moveTo移动到某一点准备状态(第一笔的开始)  lineTo线的下一个点坐标stroke()绘制信号*/
+	ctx.beginPath();
+	ctx.moveTo(50,50);
+	ctx.lineTo(200,200);
+	ctx.lineTo(350,50);
+	//ctx.lineTo(50,50);//也可以不画最后一步,用closePath()关闭画布
+	ctx.closePath();//画完后立刻关闭,样式后面写
+	ctx.lineWidth="5";
+	ctx.strokeStyle="red";
+	ctx.fillStyle="pink";
+	ctx.fill();
+	ctx.stroke();//划线动作
+	//ctx.closePath();
+
+	/**画矩形:
+		1.fillRect & strokeRect 四个参数,左上角的坐标(x,y),width,height;
+		2.若使用rect 后面必须要有绘制的方法 stroke() 或者 fill();
+	*/
+	ctx.beginPath();
+	ctx.fillStyle="blue";
+	ctx.strokeStyle="grey";
+	ctx.fillRect(100,210,200,100);
+	ctx.strokeRect(200,300,300,50);
+	ctx.rect(255,330,50,50);
+	ctx.strokeStyle="green";
+	ctx.stroke();
+	ctx.closePath();
+
+</script>
+</body>
+</html>

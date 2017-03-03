@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图形的覆盖关系</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<canvas id="mycanvas" width="600" height="600">
+		you can't see me!
+	</canvas>
+	<script type="text/javascript">
+		var mycanvas=document.getElementById("mycanvas");
+		var ctx=mycanvas.getContext("2d");
+		ctx.beginPath();
+		ctx.arc(200,200,150,0,Math.PI*2,false);
+		ctx.fillStyle="red";
+		ctx.fill();
+		ctx.closePath();
+		/**
+			在绘制完成第一个图形之后,加
+		context.globalCompositeOperation=type
+		再接着绘制第二个图形
+		type:
+		source-over(默认值):在原有图形上绘制新图形
+		destination-over:在原有图形下绘制新图形
+		source-in:显示原有图形和新图形的交集,新图形在上,所以颜色为新图形的颜色
+		destination-in:显示原有图形和新图形的交集,原有图形在上,所以颜色为原有图形的颜色
+		source-out:只显示新图形非交集部分
+		destination-out:只显示原有图形非交集部分,是将交集的部分转化为透明
+		source-atop:显示原有图形和交集部分,新图形在上,所以交集部分的颜色为新图形的颜色
+		destination-atop:显示新图形和交集部分,新图形在下,所以交集部分的颜色为原有图形的颜 色
+		lighter:原有图形和新图形都显示,交集部分做颜色叠加 xor:重叠飞部分不显示
+		copy:只显示新图形
+		*/
+		ctx.globalCompositeOperation="lighter";
+		ctx.beginPath();
+		ctx.arc(400,200,150,0,Math.PI*2,false);
+		ctx.fillStyle="blue";
+		ctx.fill();
+		ctx.closePath();
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>会弹得球</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#box{
+			width:800px;
+			height: 800px;
+			border:20px groove grey;
+			position: relative;
+		}
+		#ball{
+			width:50px;
+			height:50px;
+			border-radius: 50%;
+			position: absolute;
+			top:0px;
+			left:0px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+<div id="box">
+	<div id="ball"></div>
+</div>
+<script type="text/javascript">
+	var box=document.getElementById("box");
+	var ball=document.getElementById("ball");
+	var boxWidth=box.clientWidth;//盒子的内的宽度
+	var boxHeight=box.clientHeight;//盒子的内的高度
+	var ballWidth=ball.clientWidth;//球的宽度
+	var ballHeight=ball.clientHeight;//球的高度
+	console.log(boxWidth);
+	console.log(boxHeight);
+	var disX=Math.ceil(Math.random()*5);
+	var disY=Math.ceil(Math.random()*5);
+	ballMove();
+	function ballMove(){
+		var res1=0;
+		var res2=0;
+		var timer=setInterval(function(){
+			// alert(123);
+			if(ball.offsetLeft>=boxWidth-ballWidth){
+				disX=-disX;
+			}
+			else if(ball.offsetLeft<0){
+				disX=-disX;
+			}
+
+			if(ball.offsetTop>=boxHeight-ballHeight){
+				disY=-disY;
+			}
+			else if(ball.offsetTop<0){
+				disY=-disY;
+			}
+			console.log(disX);
+			console.log(disY);
+			res1+=disX;
+			res2+=disY;
+			console.log(res1);
+			console.log(res2);
+
+			ball.style["left"]=res1+"px";
+			ball.style["top"]=res2+"px";
+
+		},10);
+	}
+	
+</script>
+</body>
+</html>
