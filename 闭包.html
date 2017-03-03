@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>闭包</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	// var myName="yxr";//全局变量
+	// var a=function(){
+	// 	document.body.style.backgroundColor="red";
+	// }
+	// a();//直接执行
+	//document.onclick=a;//点击的时候执行,时间绑定方法不加(),加()表示立即执行
+	// (function(){
+	// 	var x=10;
+	// 	alert(x);
+	// })();//匿名函数的自执行
+	// (function(n){
+	// 	alert(n);
+	// })(20);//带参数的匿名函数的自执行
+	// function f1(){
+	// 	var n=999;
+	//  	nAdd=function(){
+	// 		n=n+1;
+	// 	}
+	// 	function f2(){
+	// 		alert(n);
+	// 	}
+	// 	return f2;
+	// }
+	// var result=f1();
+	// result();//999
+	// nAdd();
+	// result();//1000
+
+	/*局部变量与全局变量*/
+	var scope00="globalaaaaa";
+	var a=10;
+	function checkScope(){
+		console.log(scope00);//undefined
+		console.log(a); //10
+		var scope="local";
+		console.log(scope);//local
+	}
+	checkScope();
+</script>
+</body>
+</html>
